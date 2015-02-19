@@ -2,7 +2,7 @@
 Interface between Julia and Torch (Lua) using ZMQ.
 
 ### Description
-This module can be used to call torch functions from Julia. Currently the return values are restricted to be 1-D arrays but this can be easily changed in torch_server. 
+This module can be used to call torch functions from Julia. Currently the return values are restricted to be 1-D arrays but this can be easily changed in torch_server. Most importantly, since the torch server loads lua scripts, lua variables are persistent across multiple API calls. This is useful for instance when loading neural network models in torch once and asking it to return feature vectors across multiple batches.
 
 ### Usage
 1. Start the torch ZMQ server by typing: 
